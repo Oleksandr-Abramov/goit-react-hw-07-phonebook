@@ -13,9 +13,9 @@ export const ContactList = ({ contactsList }) => {
   return (
     contactsList.length !== 0 && (
       <ul className={s.list}>
-        {contactsList.map(({ name, number, id }) => (
+        {contactsList.map(({ name, phone, id }) => (
           <li key={id} className={s.item}>
-            {name}: {number}
+            {name}: {phone}
             <button
               type="button"
               onClick={() => {
