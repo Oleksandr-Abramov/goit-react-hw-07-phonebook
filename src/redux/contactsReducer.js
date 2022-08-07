@@ -1,4 +1,3 @@
-// import { createReducer } from '@reduxjs/toolkit/dist/createReducer';
 import { createReducer } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
 import { findContact } from './contactsActions';

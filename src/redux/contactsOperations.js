@@ -1,9 +1,3 @@
-// import { createAction } from '@reduxjs/toolkit';
-
-// export const addContact = createAction('contacts/addContact');
-// export const deleteContact = createAction('contacts/deleteContact');
-// export const findContact = createAction('contacts/findContact');
-
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { addContacts, deleteContacts, getContacts } from 'service/apiService';
 
@@ -24,14 +18,10 @@ export const addNewContact = createAsyncThunk(
   async (dataContact, { rejectWithValue, dispatch }) => {
     try {
       const { data } = await addContacts(dataContact);
-      console.log('~ resp data', data);
       // if (resp.status !== 201) {
       //   throw new Error("Can't add contact. Server error.");
       // }
       return data;
-
-      // const data = await response.json();
-      // dispatch(addTodo(data));
     } catch (error) {
       return rejectWithValue(error.message);
     }
@@ -40,17 +30,10 @@ export const addNewContact = createAsyncThunk(
 
 export const deleteContact = createAsyncThunk(
   'contacts/deleteContact',
-  async (id, { rejectWithValue, dispatch }) => {
+  async (contactId, { rejectWithValue }) => {
     try {
-      const resp = await deleteContacts(id);
-      console.log('~ resp', resp);
-      // if (resp.status !== 201) {
-      //   throw new Error("Can't add contact. Server error.");
-      // }
+      const { id } = await deleteContacts(contactId);
       return id;
-
-      // const data = await response.json();
-      // dispatch(addTodo(data));
     } catch (error) {
       return rejectWithValue(error.message);
     }

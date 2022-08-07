@@ -13,6 +13,5 @@ export const addContacts = data =>
 
 export const deleteContacts = id =>
   axios.delete(`/${id}`).then(response => {
-    console.log('~ response axios', response);
-    return response;
+    return response.data;
   });

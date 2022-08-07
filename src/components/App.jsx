@@ -9,7 +9,6 @@ import { fetchContacts } from '../redux/contactsOperations';
 export const App = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(state => state.contacts.items);
-  console.log('~ contacts', contacts[0]);
   const symbolsFilter = useSelector(state => state.contacts.filter);
 
   const isFirstRender = useRef(true);
