@@ -11,14 +11,14 @@ export const App = () => {
   const contacts = useSelector(state => state.contacts.items);
   const symbolsFilter = useSelector(state => state.contacts.filter);
 
-  const isFirstRender = useRef(true);
+  // const isFirstRender = useRef(true);
 
   useEffect(() => {
-    if (!isFirstRender.current) {
-      dispatch(fetchContacts());
-    } else {
-      isFirstRender.current = false;
-    }
+    // if (!isFirstRender.current) {
+    dispatch(fetchContacts());
+    // } else {
+    //   isFirstRender.current = false;
+    // }
   }, [dispatch]);
 
   const handleOnInputFilter = evt => {
