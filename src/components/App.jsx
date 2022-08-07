@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux/es/exports';
 import * as contactsActions from '../redux/contactsActions';
 import { ContactForm } from './ContactForm/ContactForm';
